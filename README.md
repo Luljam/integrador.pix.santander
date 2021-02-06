@@ -5,8 +5,11 @@
 ## Configurações
 ### web.config
 ```c#
-    <add key="pix:url" value="https://trust-pix-h.santander.com.br" /> <!-- Homologação-->
-    <add key="pix:url" value="https://trust-pix.santander.com.br" /> <!-- Produção -->
+    <add key="pix:path_certificate" value="path_certificate" />
+    <add key="pix:password_certificate" value="password_certificate" />
+    
+    <add key="pix:url" value="https://trust-pix-h.santander.com.br" />
+    <add key="pix:chave_pix" value="chave_pix" />
     <add key="pix:client_id" value="client_id" />
     <add key="pix:client_secret" value="client_secret" />
 ```
@@ -14,23 +17,35 @@
 ## Reunião
 ### Criando um PIX dinâmico
 ```c#                                    
-  using(var pix = new Pix())
+  using(var pix = new Pix(
+                new Configuracao
+                (
+                    ConfigurationManager.AppSettings["pix:client_id"].ToString(), 
+                    ConfigurationManager.AppSettings["pix:client_secret"].ToString(),
+                    ConfigurationManager.AppSettings["pix:path_certificate"].ToString(),
+                    ConfigurationManager.AppSettings["pix:password_certificate"].ToString()
+                )))
   {
-      var cobranca = new CriarCobrancaModelPost(Faker.Random.Guid().ToString().Replace("-", "").ToUpper(),
-                                          "chave_pix",
-                                          "sua_mensagem",
-                                          "seu_prazo_expiracao",
-                                          "cpf_pagador_seu_pontos",
-                                          "nome_pagador",
-                                          string.Format("{0:0.00}", "valor_pagar").Replace(",", "."));
-                                          
-      var result = pix.Cobranca.CriarCobranca(cobranca);
+      var chave = ConfigurationManager.AppSettings["pix:chave_pix"].ToString();
+      var cobranca = new Cobranca(chave, "txtid_opcional_gera_guid_caso_ignorado");
+      var devedor = new Devedor(Faker.Person.Cpf(false), Faker.Person.FullName);
+      var valor = new Valor(0.05M);
+      
+      var post = new CriarCobrancaModelPost(cobranca, devedor, valor);
+      var result = pix.Cobranca.CriarCobranca(post);
   }                   
 ```
 
 ### Obter pix's recibidos
 ```c#
-  using(var pix = new Pix())
+  using(var pix = new Pix(
+                new Configuracao
+                (
+                    ConfigurationManager.AppSettings["pix:client_id"].ToString(), 
+                    ConfigurationManager.AppSettings["pix:client_secret"].ToString(),
+                    ConfigurationManager.AppSettings["pix:path_certificate"].ToString(),
+                    ConfigurationManager.AppSettings["pix:password_certificate"].ToString()
+                )))
   {
     var parametros = new ConsultarCobrancasParametrosModelGet
     {
