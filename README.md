@@ -1,6 +1,6 @@
 # INTEGRADOR PIX SANTANDER [![Build Status](https://secure.travis-ci.org/morrisjs/morris.js.png?branch=master)](http://travis-ci.org/morrisjs/morris.js)
 .NET Class Library for integration with PIX SANTANDER API <br />
-.NET Framework 4.6
+.NET Framework 4.6 <br />
 .DLL focado na integração com o BANCO SANTANDER, entretanto caso queira utilizar para outro banco, basta alterar a geração do PAYLOAD, o restante das regras serão as mesmas.
 
 ## Configurações
