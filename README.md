@@ -36,6 +36,22 @@
   }                   
 ```
 
+### Obter pix pelo id
+```c#
+  using(var pix = new Pix(
+                new Configuracao
+                (
+                    ConfigurationManager.AppSettings["pix:client_id"].ToString(), 
+                    ConfigurationManager.AppSettings["pix:client_secret"].ToString(),
+                    ConfigurationManager.AppSettings["pix:path_certificate"].ToString(),
+                    ConfigurationManager.AppSettings["pix:password_certificate"].ToString()
+                )))
+  {
+                              
+    var result = pix.Cobranca.ObterCobranca("txtid_da_cobranca");
+  }   
+```
+
 ### Obter pix's recibidos
 ```c#
   using(var pix = new Pix(
