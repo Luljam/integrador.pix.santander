@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrador.Pix.Santander", "Integrador.Pix.Santander\Integrador.Pix.Santander.csproj", "{A629A7D8-1339-43EC-B258-87723B1ADDEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrador.Pix.Santander.Tests", "Integrador.Pix.Santander.Tests\Integrador.Pix.Santander.Tests.csproj", "{AE8CAF98-5C01-4527-8AE9-62BEA1C45694}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A629A7D8-1339-43EC-B258-87723B1ADDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A629A7D8-1339-43EC-B258-87723B1ADDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A629A7D8-1339-43EC-B258-87723B1ADDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A629A7D8-1339-43EC-B258-87723B1ADDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE8CAF98-5C01-4527-8AE9-62BEA1C45694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE8CAF98-5C01-4527-8AE9-62BEA1C45694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE8CAF98-5C01-4527-8AE9-62BEA1C45694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE8CAF98-5C01-4527-8AE9-62BEA1C45694}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDCE86CA-1B4D-4804-9334-4E84B1CFC33E}
+	EndGlobalSection
+EndGlobal
